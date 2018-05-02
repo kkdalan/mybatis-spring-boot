@@ -1,16 +1,15 @@
 package tk.mybatis.springboot;
 
-import java.util.List;
-
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import tk.mybatis.springboot.mapper.CountryMapper;
-import tk.mybatis.springboot.model.Country;
 
 @SpringBootApplication
+@MapperScan(value = { "tk.mybatis.springboot.mapper", "tk.mybatis.simple.mapper" }, nameGenerator = MapperNameGenerator.class)
 public class Application implements CommandLineRunner {
 
 	@Autowired
